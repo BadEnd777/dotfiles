@@ -6,7 +6,7 @@
       "newline": true,
       "segments": [
         {
-          "background": "#5895f8",
+          "background": "#89b4fa",
           "foreground": "#ffffff",
           "leading_diamond": "\ue0b2",
           "properties": {
@@ -16,16 +16,16 @@
           },
           "style": "diamond",
           "template": " {{ if .WSL }}WSL at {{ end }}{{.Icon}}",
-          "trailing_diamond": "<transparent,#5895f8>\ue0b2</>",
+          "trailing_diamond": "<transparent,#89b4fa>\ue0b2</>",
           "type": "os"
         },
         {
-          "background": "#71a4f9",
+          "background": "#a1c4fb",
           "foreground": "#ffffff",
           "leading_diamond": "\ue0b2",
           "style": "diamond",
           "template": "\uf489 {{ .Name }}",
-          "trailing_diamond": "<transparent,#71a4f9>\ue0b2</>",
+          "trailing_diamond": "<transparent,#a1c4fb>\ue0b2</>",
           "type": "shell"
         },
         {
@@ -120,7 +120,7 @@
           },
           "style": "plain",
           "template": "\u2570\u2500 ",
-          "type": "exit"
+          "type": "text"
         }
       ],
       "type": "prompt"
