@@ -28,9 +28,3 @@ alias gs='git status' # git status
 alias ga='git add' # git add
 alias gc='git commit -m' # git commit
 alias gp='git push' # git push
-# bun completions
-[ -s "/home/badend/.bun/_bun" ] && source "/home/badend/.bun/_bun"
-
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
