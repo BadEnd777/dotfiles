@@ -15,6 +15,12 @@ fi
 # Stop on errors
 set -e
 
+# Set Zsh as default shell
+chsh -s $(which zsh)
+
+# Set Environment Variables
+export ZSH_CUSTOM="$HOME/.oh-my-zsh/custom"
+
 # Install Zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_CUSTOM/plugins/zsh-syntax-highlighting
