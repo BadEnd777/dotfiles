@@ -13,7 +13,7 @@ Install-Module -Name PSReadLine -AllowPrerelease -Scope CurrentUser -Force -Skip
 # Download and install your chosen Nerd Fonts manually.
 
 # Step 4: Install Oh-My-Posh
-winget install JanDeDobbeleer.OhMyPosh -s winget
+Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://ohmyposh.dev/install.ps1'))
 
 # Step 5: Configure PowerShell Profile
 # Download and install Microsoft.PowerShell_profile.ps1
@@ -21,15 +21,12 @@ $profileContent = Invoke-RestMethod -Uri 'https://raw.githubusercontent.com/BadE
 Set-Content -Path $profilePath -Value $profileContent -Force
 
 # Download and install 1ms.omp.json
-$ompJsonContent = Invoke-RestMethod -Uri 'https://raw.githubusercontent.com/BadEnd777/dotfiles/main/windows/Oh-My-Posh/1ms.omp.json'
-$ompJsonPath = Join-Path $env:POSH_THEMES_PATH '1ms.omp.json'
-
-# Check if $env:POSH_THEMES_PATH is defined and not null
-if ($env:POSH_THEMES_PATH -and $ompJsonPath) {
-    Set-Content -Path $ompJsonPath -Value $ompJsonContent -Force
-} else {
-    Write-Host "Error: Unable to determine the theme path. Please check your configuration."
+if (-not (Test-Path $env:POSH_THEMES_PATH)) {
+    New-Item -Path $env:POSH_THEMES_PATH -ItemType Directory -Force
 }
+
+$ompContent = Invoke-RestMethod -Uri 'https://raw.githubusercontent.com/BadEnd777/dotfiles/main/windows/Oh-My-Posh/1ms.omp.json'
+Set-Content -Path "$env:POSH_THEMES_PATH\1ms.omp.json" -Value $ompContent -Force
 
 # Step 6: Additional Configuration (Optional)
 # Add your customization for the `Search` and `Work` functions in your PowerShell profile.

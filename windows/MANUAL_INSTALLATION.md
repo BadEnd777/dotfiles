@@ -35,7 +35,7 @@ Download and install your chosen [Nerd Fonts](https://www.nerdfonts.com/font-dow
 Install Oh-My-Posh:
 
 ```powershell
-winget install JanDeDobbeleer.OhMyPosh -s winget
+Set-ExecutionPolicy Bypass -Scope Process -Force; Invoke-Expression ((New-Object System.Net.WebClient).DownloadString('https://ohmyposh.dev/install.ps1'))
 ```
 
 ### 5. Configure PowerShell Profile
