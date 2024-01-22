@@ -23,7 +23,13 @@ git clone https://github.com/BadEnd777/dotfiles.git
 cd dotfiles/linux
 ```
 
-### 3. Run the `install.sh` script
+### 3. Give the `install.sh` script executable permissions
+
+```bash
+chmod +x install.sh
+```
+
+### 4. Run the `install.sh` script
 
 ```bash
 ./install.sh

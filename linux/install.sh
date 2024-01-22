@@ -6,14 +6,14 @@ if ! command -v zsh &> /dev/null; then
     exit 1
 fi
 
+# Check if Oh-My-Zsh is installed
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
+    echo "Oh-My-Zsh is not installed. Please install it first."
+    exit 1
+fi
+
 # Stop on errors
 set -e
-
-# Install Zsh
-sudo apt install zsh
-
-# Install Oh-My-Zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 # Install Zsh plugins
 git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_CUSTOM/plugins/zsh-autosuggestions
